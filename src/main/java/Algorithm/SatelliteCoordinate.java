@@ -27,11 +27,12 @@ public class SatelliteCoordinate {
 			double t = (30.0 * (f0) - adjustment.referance * 3600.0);// sn
 			double Mk = adjustment.M + t * (n + adjustment.dn);
 			double E = Mk + adjustment.e * Math.sin(Mk), Ea = 0.0;
-			do {
+			do 
+			{
 				Ea = E;
 				E = Mk + adjustment.e * Math.sin(Ea);
-
-			} while (Math.abs(Ea - E) > 1.0e-10);
+			} 
+			while (Math.abs(Ea - E) > 1.0e-10);
 
 			double c = Math.sqrt(1 - adjustment.e * adjustment.e) * Math.sin(E), v = (Math.cos(E) - adjustment.e);
 			double fk = Equation.RegionAtan(c, v);
@@ -53,50 +54,13 @@ public class SatelliteCoordinate {
 
 			double time = (30.0 * f0 / 3600.0);
 			
-			if (f0 % 30.0 == 0.0) {
+			if (f0 % 30.0 == 0.0) 
+			{
 				System.out.printf("%10s%25s%25s%25s%25s\n", time , dx, dy, dz, dt);
 				drawX += time+" "+dx+"\n";
 				drawY += time+" "+dy+"\n";
 				drawZ += time+" "+dz+"\n";
 			}
 		}
-	}
-	public static void drawAxisErrors()
-	{
-            
-                double ref = 12.5;
-                double min = -750.0;
-                double max = 1000.0;
-                // Font and Name
-                Plot.P += "set xlabel '[h]' font 'times,15'\n";
-                Plot.P += "set ylabel '[m]' font 'times,15'\n";
-                Plot.P += "set title 'G14 (12.30)' font 'times,20'\n";
-                Plot.P += "set tics font 'times,13'\n";
-                Plot.P += "set key font 'times,13'\n";
-                // Increase of axis
-                Plot.P += "set xtic 1.0\n";
-                Plot.P += "set ytic 125.0\n";
-                //Create to grid
-                Plot.P += "set grid ytics lt 1 lw 0.75 lc rgb 'gray90'\n";
-                Plot.P += "set grid xtics lt 1 lw 0.75 lc rgb 'gray90'\n";
-                
-		Plot.Titles("SP3_x - BRDC_x","SP3_y - BRDC_y","SP3_z - BRDC_z","","");
-                
-		Plot.Vector.LinesPoints(7, 1.0, 1, 1.5, "blue");
-		Plot.Vector.LinesPoints(7, 1.0, 1, 1.5, "red");
-		Plot.Vector.LinesPoints(7, 1.0, 1, 1.5, "green");
-                
-        Plot.Vector.Lines(1, 1.5, "gray");
-        Plot.Vector.Lines(1, 1.5, "gray");
-                
-		Plot.Vector.Array(drawX);
-		Plot.Vector.Array(drawY);
-		Plot.Vector.Array(drawZ);
-                
-		Plot.Vector.Array("0 0\n 24 0");
-		Plot.Vector.Array(ref+" "+min+"\n"+ref+" "+max);
-                
-		Plot.Write("brdcdrawerror.plt");
-		Run.exec("brdcdrawerror.plt");
 	}
 }

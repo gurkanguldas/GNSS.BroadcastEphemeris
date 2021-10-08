@@ -18,7 +18,7 @@ public class Program {
     
         
     public static void main(String[] args) {
-        String URL = "P:\\Personel\\ad\\Sta30s21035.sp3";
+        String URL = "Sta30s21035.sp3";
         String URL2= "";
         String Satellite = "G21";
         Adjustment adjustment = null;

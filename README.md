@@ -2,11 +2,10 @@
 
         3.04           NAVIGATION DATA     MIXED           RINEX VERSION / TYPE
     HRT406              Kocaeli University  20200501 004604 GMT PGM / RUN BY / DATE 
-
-Merged GPS/GLO/GAL/BDS/QZS/SBAS/IRNSS navigation file       COMMENT 
-based on L2-NORM method tracking data                       COMMENT 
-GEO/KOU: Bekir Gurkan GULDAS; Ahmet Hakan UYANIK            COMMENT   
-    18                                                      LEAP SECONDS        
+    Merged GPS/GLO/GAL/BDS/QZS/SBAS/IRNSS navigation file       COMMENT 
+    based on L2-NORM method tracking data                       COMMENT 
+    GEO/KOU: Bekir Gurkan GULDAS; Ahmet Hakan UYANIK            COMMENT   
+         18                                                      LEAP SECONDS        
                                                             END OF HEADER 
 G14 2020 05 01 12 30 00.0-1.596444587143e-05 2.482558829488e-12 2.728384713972e-18
        0.000000000000e+00 8.685380543276e+00 6.281315639757e-09 5.048994185180e+00

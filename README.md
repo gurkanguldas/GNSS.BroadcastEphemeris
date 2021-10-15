@@ -1,5 +1,5 @@
-# GNSS.BroadcastEphemeris
-
+# Broadcast Ephemeris
+###### Explanation will come soon...
         3.04           NAVIGATION DATA     MIXED           RINEX VERSION / TYPE
     HRT406              Kocaeli University  20200501 004604 GMT PGM / RUN BY / DATE 
     Merged GPS/GLO/GAL/BDS/QZS/SBAS/IRNSS navigation file       COMMENT 
